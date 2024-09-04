@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.
+
+
+void calculate_the_maximum(int n, int k) 
+{
+   int a,b,add,or,xor,max1=0,max2=0,max3=0;
+  for(a=1;a<n;a++)
+  {
+    for(b=a+1;b<=n;b++)
+    {
+       add=a&b;
+       or=a|b;
+       xor=a^b;
+        if(add>max1 && add<k)
+        {
+          max1=add;
+        }   
+       if(or>max2 && or<k)
+         {
+           max2=or;
+         }
+       if(xor>max3 && xor<k)
+         { 
+           max3=xor;
+         }
+}
+  }
+printf("%d\n",max1);
+printf("%d\n",max2);
+printf("%d\n",max3);
+}
+int main() 
+{
+    int n, k;
+  
+    scanf("%d %d", &n, &k);
+    calculate_the_maximum(n, k);
+ 
+    return 0;
+
+}
